@@ -1,0 +1,242 @@
+% Dr. Geoff Boeing - Curriculum Vitae
+% Copyright 2019 Geoff Boeing
+% Email: boeing@usc.edu
+% Web: https://geoffboeing.com/
+% Repo: https://github.com/gboeing/cv
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+\usepackage[colorlinks]{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+% what is your name?
+\newcommand{\myname}{Yash Pote}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+            \setlength{\parskip}{0em}
+            \setlength{\itemsep}{\listitemspace}
+            \setlength{\parsep}{\listitemspace}}}
+    {\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {city planning, housing, street networks, transportation, urban design, urban informatics},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\begin{document}
+    \raggedright
+
+    % display name as the document title
+    \namefont{\myname}
+
+    % contact info
+    \vspace{1em}
+    \begin{minipage}[t]{0.68\textwidth}
+        School of Computing \\
+		National University of Singapore
+        %\\Los Angeles, California, USA
+    \end{minipage}
+    \begin{minipage}[t]{0.31\textwidth}
+        Email: \href{mailto:yashppote@gmail.com}{yashppote@gmail.com} \\
+        Web: \href{https://yashpote.com/}{https://yashpote.com/}
+    \end{minipage}
+    \vspace{0.5em}
+
+
+
+    \section*{Education}
+
+    \begin{tablist}
+
+        \item[Ph.D.] \tab School of Computing, National University of Singapore, 2019-
+
+        \item[B.Tech.]  \tab Computer Science and Engineering , IIT - Guwahati, 2014-2018
+
+    \end{tablist}
+
+
+    \section*{Research Areas}
+
+    \begin{itemize}
+
+	\item Solving problems beyond NP.
+	
+	\item Verification of Probabilistic Reasoning Systems.
+
+    \end{itemize}
+
+
+
+    \section*{Publications}
+
+%    \subsection*{Articles in Peer-Reviewed Journals}
+%
+%    \begin{tablist}
+%    	
+%    \end{tablist}
+%
+%
+%
+%    \subsection*{Journal Article Manuscripts Under Review}
+%
+%    \begin{tablist}
+%
+%    \end{tablist}
+%
+%
+%
+%    \subsection*{Book Chapters}
+%
+%    \begin{tablist}
+%
+%    \end{tablist}
+
+
+
+    \subsection*{Conference Proceedings/Compendia}
+
+    \begin{tablist}
+        
+        \item[2019] \tab Yash Pote, Saurabh Joshi and Kuldeep S. Meel  \enquote{Phase Transition Behavior of Cardinality and
+        XOR Constraints}, Proc. of IJCAI, 2019 (\href{https://www.ijcai.org/proceedings/2019/0162.pdf}{URL}, \href{https://meelgroup.github.io/files/slides/ijcai19pjm.pdf}{Slides})
+        
+		\item[2020] \tab Kuldeep S. Meel, Yash Pote  and Sourav Chakraborty \enquote{On Testing of Samplers}, Proc. of NeurIPS, 2020 (\href{https://arxiv.org/abs/2010.12918}{URL})
+		
+    \end{tablist}
+
+
+%    \subsection*{Reports and Working Papers}
+%
+%    \begin{tablist}
+%    \end{tablist}
+
+    \subsection*{Manuscripts in Preparation}
+
+    \begin{tablist}
+
+		\item[\the\year] \tab  Yash Pote  and Kuldeep S. Meel, \enquote{Testing Probabilistic Circuits}, Target: \textit{UAI},  2021.
+
+		\item[\the\year] \tab  Cheng-Kai Lim, Dehui Lin, Yash Pote,  Yasamin Tabatabaee, Djordje Jevdjic, \enquote{Mind the Position: Reliability Bias in DNA Data
+			Storage}, Target: \textit{ISCA},  2021.
+		
+		\item[\the\year] \tab  Durgesh Agarwal, Yash Pote  and Kuldeep S. Meel, \enquote{Partition Function Estimation: A Quantitative Study}, Target: \textit{IJCAI-Survey Track},  2021.
+    \end{tablist}
+
+
+
+%    \section*{Invited Talks}
+%
+%    \begin{tablist}
+%
+%    \end{tablist}
+
+
+%    \subsection*{Conference Presentations}
+%
+%    Presenting author \textit{italicized} if other than first author.\bigskip
+%    % Asterisk* indicates paper published in \enquote{Peer-Reviewed Proceedings} above.
+%
+%    \begin{tablist}
+%    	
+%    	\item[2020] \tab Higgs, C.,  S. Liu, G. Boeing, J. Arundel, M. Lowe, J. Sallis, E. Cerin, A.~V. Moudon, E. Hinckson, D. Adlakha, and B. Giles-Corti. \enquote{Using Open Data to Measure Policy-Relevant Geospatial Indicators of Healthy, Active Urban Environments in 25 Global Cities.} International Society of Behavioral Nutrition and Physical Activity Annual Meeting. Auckland, New Zealand. June 17--20.
+%    	
+%    
+%
+%    \end{tablist}
+
+
+
+
+
+    \section*{Teaching Experience}
+
+    \subsection*{National University of Singapore}
+    
+    \begin{itemize}
+    	
+ \item   CS 4244: Knowledge Representation and Reasoning (Teaching Assistant-Spring 2019,2020)
+  \item   CS 4269/CS 5469: Fundamentals of Logic in Computer Science (Teaching Assistant-Winter 2019)
+  \item   CS 4218: Software Testing (Lab Tutor-Spring 2021)
+    
+	\end{itemize}
+    
+    \section*{Professional Experience}
+
+    \begin{tablist}
+
+        \item[2017] \tab Goldman Sachs, Summer Intern in the Global Securities Team\\
+        Bangalore, India;
+
+    \end{tablist}
+
+
+    % display today's date as Month Year after a vertical space below the end of the text
+    \begin{center}
+        %\vspace{6em}
+        \vfill
+        Updated \monthyeardate\today
+    \end{center}
+
+
+\end{document}
