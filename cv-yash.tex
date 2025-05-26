@@ -13,6 +13,8 @@
 \usepackage{microtype} % improves text appearance with kerning, etc
 \usepackage{datetime} % enable formatting of date output
 \usepackage{tabto} % make nice tabbing
+\usepackage{xcolor} % Added for custom colors
+\definecolor{LightBlue}{rgb}{0.0, 0.0, 0.55}
 \usepackage[colorlinks]{hyperref} % enable hyperlinks and pdf metadata
 \usepackage{geometry} % manually set page margins
 \usepackage{enumitem} % enumerate with [resume] option
@@ -23,7 +25,7 @@
 
 % define a default font face and set it as the body font
 \usepackage{crimson} % document's serif font
-\usepackage{helvet}  % document's sans serif font
+\usepackage{helvet} % document's sans serif font
 
 % define how far to tab for list items with left-aligned date - different font faces need different widths
 \newcommand{\listtabwidth}{1.75cm}
@@ -76,9 +78,12 @@
 % define hyperlink appearance and metadata for pdf properties
 \hypersetup{
 	colorlinks  = true,
-	urlcolor    = blue,
+	urlcolor    = LightBlue,
+	linkcolor   = LightBlue,
+	citecolor   = LightBlue,
+	filecolor   = LightBlue,
 	pdfauthor   = {\myname},
-	pdfkeywords = {city planning, housing, street networks, transportation, urban design, urban informatics},
+	pdfkeywords = {distribution testing, verification},
 	pdftitle    = {\myname: Curriculum Vitae},
 	pdfsubject  = {Curriculum Vitae},
 	pdfpagemode = UseNone
@@ -93,103 +98,108 @@
 	% contact info
 	\vspace{1em}
 	\begin{minipage}[t]{0.68\textwidth}
-		Ph.D. Candidate \\
-		School of Computing \\
-		National University of Singapore
-		%\\Los Angeles, California, USA
-	\end{minipage}
-	\begin{minipage}[t]{0.31\textwidth}
-		Email: \href{mailto:yashppote@gmail.com}{yashppote@gmail.com} \\
-		Web: \href{https://yashpote.com}{https://yashpote.com}
+		email: \href{mailto:yashppote@gmail.com}{yashppote@gmail.com} \quad $\circ$
+		web: \href{https://yashpote.com}{https://yashpote.com}
 	\end{minipage}
 	\vspace{0.5em}
 	
+	\section*{Employment}
 	
+	\begin{tablist}
+		\item[Postdoc] \tab School of Computing, National University of Singapore, 2025-    \\
+		(Mentor:  Jonathan Scarlett)
+		
+	\end{tablist}
 	
 	\section*{Education}
 	
 	\begin{tablist}
-		\item[Postdoc] \tab School of Computing, National University of Singapore, 2025-
 		
-		\item[Ph.D.] \tab School of Computing, National University of Singapore, 2019-
 		
-		\item[B.Tech.]  \tab Computer Science and Engineering, IIT - Guwahati, 2014-2018
+		\item[Ph.D.] \tab School of Computing, National University of Singapore, 2019-25
+		\\
+		(Advisor:  Kuldeep S. Meel)
+		
+		\item[B.Tech.]  \tab Computer Science and Engineering, IIT-Guwahati, 2014-18
 	\end{tablist}
 	
 	
-	\section*{Research Interest}
-	
-My  research interests are distribution testing and formal methods. Specifically, I want to explore and apply the theory of distribution testing to build faster verification tools for real-world distributions, such as samplers and generative models. More generally, I am interested in the use of formal methods (like combinatorial solving) in machine learning.
-	
-	
-	
+	%   \section*{Research Interest}
+	%   
+	%My  research interests are distribution testing and formal methods. Specifically, I want to explore and apply the theory of distribution testing to build faster verification tools for real-world distributions, such as samplers and generative models. More generally, I am interested in the use of formal methods (like combinatorial solving) in machine learning.
+	%   
 	\section*{Publications}
-	
-	
-	%\subsection*{Conference Proceedings}
+	\textcircled{r} indicates random author ordering
 	\subsection*{Distribution Testing}
-	\begin{tablist} 
-	\item[2025] \tab  	\enquote{Distribution Testing in the Real World: Application to Plagiarism Detection in Large Language Models}, \textit{Under Submission}\\
-		Clemént L. Canonne, Yash Pote, and Uddalok Sarkar
+	\begin{tablist}
+		\item[2025] \tab      {\href{#}{Zero-Shot Attribution for Large Language Models: A Distribution Testing Approach}}, \\
+		\textit{Under Submission}.
+		\\ % paper URL placeholder
+		Clemént L. Canonne, \underline{Yash Pote}, and Uddalok Sarkar
 		
-		\item[2025] \tab  	\enquote{Distance Estimation for High-Dimensional Discrete Distributions}, \textit{Under Submission} (\href{https://arxiv.org/abs/2308.04264}{Paper}).\\
-		Gunjan Kumar,  Kuldeep S. Meel, and Yash Pote.
-
-    	\item[2024] \tab \enquote{Testing Self-Reducible Samplers},  \textit{AAAI}\\
-		Rishiraj Bhattacharya, Sourav Chakraborty, Yash Pote, Uddalok Sarkar, and Sayantan Sen.
+		\item[2025] \tab  {\href{https://arxiv.org/abs/2505.12107}{Learning Probabilistic Temporal Logic Specifications for Stochastic Systems}}, \textit{IJCAI}. \\
+		(\href{https://github.com/rajarshi008/PriTL}{Code}).\\
+		Rajarshi Roy, \underline{Yash Pote}, David Parker and Marta Kwiatkowska\\
+		\textbf{Invited to the \href{https://aair-lab.github.io/aia2025/}{Workshop on User-Aligned Assessment of Adaptive AI Systems}}
 		
-		\item[2022] \tab  \enquote{On Scalable Testing of Samplers},  \textit{NeurIPS}  (\href{https://arxiv.org/abs/2306.13958}{Paper}, \href{https://github.com/meelgroup/barbarik}{Code}).\\
-		Yash Pote  and Kuldeep S. Meel
+		\item[2025] \tab      {\href{https://arxiv.org/abs/2308.04264}{Distance Estimation for High-Dimensional Discrete Distributions}}, \textit{AISTATS}.\\
+		Gunjan Kumar \textcircled{r}  Kuldeep S. Meel \textcircled{r} \underline{Yash Pote}.
 		
-	
-		\item[2021] \tab  \enquote{Testing Probabilistic Circuits},  \textit{NeurIPS}  (\href{https://arxiv.org/abs/2112.04941}{Paper}, \href{https://github.com/meelgroup/teq}{Code}).\\
-		Yash Pote  and Kuldeep S. Meel
+		\item[2024] \tab {\href{https://doi.org/10.1609/aaai.v38i8.28632 }{Testing Self-Reducible Samplers}},  \textit{AAAI}.\\ % paper URL placeholder
+		Rishiraj Bhattacharya, Sourav Chakraborty, \underline{Yash Pote}, Uddalok Sarkar, and Sayantan Sen.
 		
+		\item[2022] \tab  {\href{https://arxiv.org/abs/2306.13958}{On Scalable Testing of Samplers}},  \textit{NeurIPS} (\href{https://github.com/meelgroup/barbarik}{Code}).\\
+		\underline{Yash Pote}  \textcircled{r} Kuldeep S. Meel
 		
-		\item[2020] \tab  \enquote{On Testing of Samplers}, \textit{NeurIPS}. (\href{https://arxiv.org/abs/2010.12918}{Paper}, \href{https://github.com/meelgroup/barbarik}{Code}).\\
-		Kuldeep S. Meel, Yash Pote, and Sourav Chakraborty
+		\item[2021] \tab  {\href{https://arxiv.org/abs/2112.04941}{Testing Probabilistic Circuits}},  \textit{NeurIPS} (\href{https://github.com/meelgroup/teq}{Code}).\\
+		\underline{Yash Pote}  \textcircled{r} Kuldeep S. Meel
+		
+		\item[2020] \tab  {\href{https://arxiv.org/abs/2010.12918}{On Testing of Samplers}}, \textit{NeurIPS}. (\href{https://github.com/meelgroup/barbarik}{Code}).\\
+		Kuldeep S. Meel  \textcircled{r} \underline{Yash Pote}  \textcircled{r} Sourav Chakraborty
 		
 	\end{tablist}
-
-	\subsection*{Solving Combinatorial Problems}
-
-
-\begin{tablist}
-		\item[2025] \tab  	\enquote{Towards Real-Time Approximate Counting}, \textit{AAAI} \\
-	%	(\href{https://arxiv.org/abs/2105.11132}{Paper}, \href{}{Slides}, \href{}{Data})\\
-	 Yash Pote, Kuldeep S. Meel, and Jiong Yang
 	
-	\item[2021] \tab  \enquote{Partition Function Estimation: A Quantitative Study},  \textit{IJCAI (Survey)}.\\
-(\href{https://arxiv.org/abs/2105.11132}{Paper}, \href{https://meelgroup.github.io/publication/ijcai21_partition}{Slides}, \href{https://doi.org/10.5281/zenodo.4769117}{Data})\\
-Durgesh Agrawal, Yash Pote, and Kuldeep S. Meel
-
-		\item[2019] \tab \enquote{Phase Transition Behavior of Cardinality and
-	XOR Constraints}, \textit{IJCAI}.\\ (\href{https://arxiv.org/abs/1910.09755}{Paper},  \href{https://meelgroup.github.io/files/slides/ijcai19pjm.pdf}{Slides},  \href{https://github.com/meelgroup/1-CARD-XOR/}{Code}).\\
-Yash Pote, Saurabh Joshi, and Kuldeep S. Meel
-
-\end{tablist}
+	\subsection*{Solving Combinatorial Problems}
+	
+	\begin{tablist}
+		\item[2025] \tab      {\href{https://doi.org/10.1609/aaai.v39i11.33231}{Towards Real-Time Approximate Counting}}, \textit{AAAI}.\\
+		\underline{Yash Pote}  \textcircled{r} Kuldeep S. Meel, \textcircled{r} Jiong Yang\\
+		\textbf{Selected for  oral presentation}  (top 4.6\% of submitted papers)
+		
+		\item[2021] \tab  {\href{https://arxiv.org/abs/2105.11132}{Partition Function Estimation: A Quantitative Study}},  \textit{IJCAI (Survey)}. \\
+		(\href{https://meelgroup.github.io/publication/ijcai21_partition}{Slides}, \href{https://doi.org/10.5281/zenodo.4769117}{Data})\\
+		Durgesh Agrawal, \underline{Yash Pote}, and Kuldeep S. Meel
+		
+		\item[2019] \tab {\href{https://arxiv.org/abs/1910.09755}{Phase Transition Behavior of Cardinality and
+				XOR Constraints}}, \textit{IJCAI}.\\ (\href{https://meelgroup.github.io/files/slides/ijcai19pjm.pdf}{Slides},  \href{https://github.com/meelgroup/1-CARD-XOR/}{Code}).\\
+		\underline{Yash Pote}, Saurabh Joshi, and Kuldeep S. Meel
+		
+	\end{tablist}
 	\subsection*{DNA Data Storage}
 	\begin{tablist}
+		
+		\item[2023] \tab  {\href{https://arxiv.org/abs/2212.13447}{Efficiently Supporting Hierarchy and Data Updates in DNA Storage}}, \textit{MICRO}.\\
+		Puru Sharma, Cheng-Kai Lim, Dehui Lin, \underline{Yash Pote}, and Djordje Jevdjic.
+		
+		\item[2022] \tab  {\href{https://arxiv.org/abs/2204.12261}{Managing Reliability Bias in DNA Storage}}, \textit{ISCA}.\\
+		Dehui Lin, Yasamin Tabatabaee, \underline{Yash Pote}, Djordje Jevdjic
+		
+	\end{tablist}
 	
-		\item[2023] \tab  \enquote{Efficiently Supporting Hierarchy and Data Updates in DNA Storage}, \textit{MICRO} (\href{https://arxiv.org/abs/2212.13447}{Paper}).\\
-	Puru Sharma, Cheng-Kai Lim, Dehui Lin, Yash Pote, and Djordje Jevdjic.
 	
-		\item[2022] \tab  \enquote{Managing Reliability Bias in DNA Storage}, \textit{ISCA}  (\href{https://arxiv.org/abs/2204.12261}{Paper}).\\
-	Dehui Lin, Yasamin Tabatabaee, Yash Pote, Djordje Jevdjic
-	
-\end{tablist}
 	
 	\section*{Teaching Experience}
 	
 	\subsection*{National University of Singapore}
-	
-	\begin{itemize}
+	\begin{tablist}
 		
-		\item   CS 4244: Knowledge Representation and Reasoning (Teaching Assistant-Spring 2019, 20, 23)
-		\item   CS 4269/CS 5469: Fundamentals of Logic in Computer Science (Teaching Assistant-Winter 2019)
-		\item   CS 4218: Software Testing (Lab Tutor-Spring 2021)
 		
-	\end{itemize}
+		
+		\item[CS 4244] \tab Knowledge Representation and Reasoning (2019, 20, 23) \\Teaching Assistant
+		\item[CS 5469] \tab Fundamentals of Logic in Computer Science (2019) \\ Teaching Assistant
+		\item[CS 4218] \tab  Software Testing (2021) \\
+		Lab Tutor
+	\end{tablist}
 	
 	\section*{Professional Experience}
 	\begin{tablist}
@@ -201,52 +211,61 @@ Yash Pote, Saurabh Joshi, and Kuldeep S. Meel
 		Bangalore, India;
 	\end{tablist}
 	
-%	\section*{Technical Skills}
-%	\begin{tablist}
-%		\item[Advanced] \tab Python, SAT/PB/ILP Solvers
-%		\item[Intermediate] \tab C, C++, MySQL, Z3, GNUPlot, Latex
-%	\end{tablist}
+	%   \section*{Technical Skills}
+	%   \begin{tablist}
+		%       \item[Advanced] \tab Python, SAT/PB/ILP Solvers
+		%       \item[Intermediate] \tab C, C++, MySQL, Z3, GNUPlot, Latex
+		%   \end{tablist}
 	
 	
 	\section*{Service}
 	\underline{Conference Reviewer }
 	\vspace{1em}
 	\begin{tablist}
-		\item[\textit{AISTATS}] \tab 2024
-		\item[\textit{CAV}] \tab 2023 		
+		\item[\textit{AISTATS}] \tab 2024,25
+		\item[\textit{CAV}] \tab 2023        
 		\item[\textit{ICLR}] \tab 2023
 		\item[\textit{ICML}]\tab 2021, 22, 23, 24
-		\item[\textit{NeurIPS}] \tab 2021, 23, 24 
+		\item[\textit{NeurIPS}] \tab 2021, 23, 24, 25 
 		\item[\textit{PODS}] \tab 2024
 	\end{tablist}
 	
-	\section*{Selected Talk(s)}
+	\section*{Selected Invited Talks}
 	\begin{tablist}
 		\item[\underline{Towards Practical Distribution Testing}   \href{https://www.youtube.com/live/LexsPa-iGA4?si=b_wZrOyOpPlYB9VR}{(Video)}\href{https://simons.berkeley.edu/sites/default/files/2024-08/Yash\%20Pote_WOLA\%20Slides.pdf}{(Slides)}] 
 		
-		\item[2023]	SACT talk, University of Sydney. 
 		
 		\item[2024] A\&C Seminar, University of Waterloo.
 		
-		\item[2024]	Verification Seminar, Oxford University.
-				
-		\item[2024]	\href{https://simons.berkeley.edu/workshops/workshop-local-algorithms-wola}{Workshop on Local Algorithms}, Sublinear Algorithm program, Simons Institute, Berkeley.	
+		\item[2024]    Verification Seminar, Oxford University.
+		
+		\item[2024]    \href{https://simons.berkeley.edu/workshops/workshop-local-algorithms-wola}{Workshop on Local Algorithms(WOLA)}, Simons Institute, Berkeley  
+		
+		\item[2023]    SACT talk, University of Sydney. 
+		
 	\end{tablist}
 	
-		\section*{Research Visits}
+	\section*{ Extended Research Visit}
 	\begin{tablist}
-		\item[2022]
-	     Participant at the \href{https://simons.berkeley.edu/programs/sat2021}{SAT} program at the \href{https://simons.berkeley.edu/}{Simon's Institute for the Theory of Computing}.
 		
-		\item[2023]
-		 Hosted by \href{https://ccanonne.github.io/}{Clément L. Canonne} at the School of Computer Science at The University of Sydney. 
 		
 		\item[2024]
-		Attended WOLA at  \href{https://simons.berkeley.edu/programs/sublinear-algorithms/}{Sublinear Algorithms} at Simon's.
+		WOLA at the \href{https://simons.berkeley.edu/programs/sublinear-algorithms/}{Sublinear Algorithms program}, \href{https://simons.berkeley.edu/}{Simon's Institute for the Theory of Computing}.
 		
-		\item[2024]	Hosted by  \href{https://ccanonne.github.io/}{Prof. Marta Z. Kwiatkowska} at the University of Oxford
+		\item[2024]    Hosted by  \href{https://ccanonne.github.io/}{Prof. Marta Z. Kwiatkowska} at the University of Oxford
+		
+		\item[2023]
+		Hosted by \href{https://ccanonne.github.io/}{Clément L. Canonne} at the School of Computer Science at The University of Sydney. 
+		
+		\item[2022]
+		Participant at the \href{https://simons.berkeley.edu/programs/sat2021}{SAT} program at the \href{https://simons.berkeley.edu/}{Simon's Institute for the Theory of Computing}.
+		
 	\end{tablist}
 	
+	\section*{Misc.}
+	\begin{tablist}
+		\item[2021] Cofounder of the Graduate Students Association of Computing (Coordinator from 2021-2023)
+	\end{tablist}
 	
 	\begin{center}
 		%\vspace{6em}
@@ -254,4 +273,279 @@ Yash Pote, Saurabh Joshi, and Kuldeep S. Meel
 		Updated \monthyeardate\today
 	\end{center}
 	
+\end{document}% Dr. Geoff Boeing - Curriculum Vitae
+% Copyright 2019 Geoff Boeing
+% Email: boeing@usc.edu
+% Web: https://geoffboeing.com/
+% Repo: https://github.com/gboeing/cv
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+\usepackage{xcolor} % Added for custom colors
+\definecolor{LightBlue}{rgb}{0.0, 0.0, 0.55}
+\usepackage[colorlinks]{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+% what is your name?
+\newcommand{\myname}{Yash Pote}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet} % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+left=1.0in,
+top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+		\setlength{\parskip}{0em}
+		\setlength{\itemsep}{\listitemspace}
+		\setlength{\parsep}{\listitemspace}}}
+{\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+labelindent=0em,
+topsep=0em,
+partopsep=0em,
+itemsep=\listitemspace,
+parsep=\listitemspace,
+font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+colorlinks  = true,
+urlcolor    = LightBlue,
+linkcolor   = LightBlue,
+citecolor   = LightBlue,
+filecolor   = LightBlue,
+pdfauthor   = {\myname},
+pdfkeywords = {distribution testing, verification},
+pdftitle    = {\myname: Curriculum Vitae},
+pdfsubject  = {Curriculum Vitae},
+pdfpagemode = UseNone
+}
+
+\begin{document}
+\raggedright
+
+% display name as the document title
+\namefont{\myname}
+
+% contact info
+\vspace{1em}
+\begin{minipage}[t]{0.68\textwidth}
+	email: \href{mailto:yashppote@gmail.com}{yashppote@gmail.com} \quad $\circ$
+	web: \href{https://yashpote.com}{https://yashpote.com}
+\end{minipage}
+\vspace{0.5em}
+
+\section*{Employment}
+
+\begin{tablist}
+	\item[Postdoc] \tab School of Computing, National University of Singapore, 2025-    \\
+	(Mentor:  Jonathan Scarlett)
+	
+\end{tablist}
+
+\section*{Education}
+
+\begin{tablist}
+	
+	
+	\item[Ph.D.] \tab School of Computing, National University of Singapore, 2019-25
+	\\
+	(Advisor:  Kuldeep S. Meel)
+	
+	\item[B.Tech.]  \tab Computer Science and Engineering, IIT-Guwahati, 2014-18
+\end{tablist}
+
+
+%   \section*{Research Interest}
+%   
+%My  research interests are distribution testing and formal methods. Specifically, I want to explore and apply the theory of distribution testing to build faster verification tools for real-world distributions, such as samplers and generative models. More generally, I am interested in the use of formal methods (like combinatorial solving) in machine learning.
+%   
+\section*{Publications}
+\textcircled{r} indicates random author ordering
+\subsection*{Distribution Testing}
+\begin{tablist}
+	\item[2025] \tab      {\href{#}{Zero-Shot Attribution for Large Language Models: A Distribution Testing Approach}}, \\
+	\textit{Under Submission}.
+	\\ % paper URL placeholder
+	Clemént L. Canonne, \underline{Yash Pote}, and Uddalok Sarkar
+	
+	\item[2025] \tab  {\href{https://arxiv.org/abs/2505.12107}{Learning Probabilistic Temporal Logic Specifications for Stochastic Systems}}, \textit{IJCAI}. \\
+	(\href{https://github.com/rajarshi008/PriTL}{Code}).\\
+	Rajarshi Roy, \underline{Yash Pote}, David Parker and Marta Kwiatkowska\\
+	\textbf{Invited to the \href{https://aair-lab.github.io/aia2025/}{Workshop on User-Aligned Assessment of Adaptive AI Systems}}
+	
+	\item[2025] \tab      {\href{https://arxiv.org/abs/2308.04264}{Distance Estimation for High-Dimensional Discrete Distributions}}, \textit{AISTATS}.\\
+	Gunjan Kumar \textcircled{r}  Kuldeep S. Meel \textcircled{r} \underline{Yash Pote}.
+	
+	\item[2024] \tab {\href{https://doi.org/10.1609/aaai.v38i8.28632 }{Testing Self-Reducible Samplers}},  \textit{AAAI}.\\ % paper URL placeholder
+	Rishiraj Bhattacharya, Sourav Chakraborty, \underline{Yash Pote}, Uddalok Sarkar, and Sayantan Sen.
+	
+	\item[2022] \tab  {\href{https://arxiv.org/abs/2306.13958}{On Scalable Testing of Samplers}},  \textit{NeurIPS} (\href{https://github.com/meelgroup/barbarik}{Code}).\\
+	\underline{Yash Pote}  \textcircled{r} Kuldeep S. Meel
+	
+	\item[2021] \tab  {\href{https://arxiv.org/abs/2112.04941}{Testing Probabilistic Circuits}},  \textit{NeurIPS} (\href{https://github.com/meelgroup/teq}{Code}).\\
+	\underline{Yash Pote}  \textcircled{r} Kuldeep S. Meel
+	
+	\item[2020] \tab  {\href{https://arxiv.org/abs/2010.12918}{On Testing of Samplers}}, \textit{NeurIPS}. (\href{https://github.com/meelgroup/barbarik}{Code}).\\
+	Kuldeep S. Meel  \textcircled{r} \underline{Yash Pote}  \textcircled{r} Sourav Chakraborty
+	
+\end{tablist}
+
+\subsection*{Solving Combinatorial Problems}
+
+\begin{tablist}
+	\item[2025] \tab      {\href{https://doi.org/10.1609/aaai.v39i11.33231}{Towards Real-Time Approximate Counting}}, \textit{AAAI}.\\
+	\underline{Yash Pote}  \textcircled{r} Kuldeep S. Meel, \textcircled{r} Jiong Yang\\
+	\textbf{Selected for  oral presentation}  (top 4.6\% of submitted papers)
+	
+	\item[2021] \tab  {\href{https://arxiv.org/abs/2105.11132}{Partition Function Estimation: A Quantitative Study}},  \textit{IJCAI (Survey)}. \\
+	(\href{https://meelgroup.github.io/publication/ijcai21_partition}{Slides}, \href{https://doi.org/10.5281/zenodo.4769117}{Data})\\
+	Durgesh Agrawal, \underline{Yash Pote}, and Kuldeep S. Meel
+	
+	\item[2019] \tab {\href{https://arxiv.org/abs/1910.09755}{Phase Transition Behavior of Cardinality and
+			XOR Constraints}}, \textit{IJCAI}.\\ (\href{https://meelgroup.github.io/files/slides/ijcai19pjm.pdf}{Slides},  \href{https://github.com/meelgroup/1-CARD-XOR/}{Code}).\\
+	\underline{Yash Pote}, Saurabh Joshi, and Kuldeep S. Meel
+	
+\end{tablist}
+\subsection*{DNA Data Storage}
+\begin{tablist}
+	
+	\item[2023] \tab  {\href{https://arxiv.org/abs/2212.13447}{Efficiently Supporting Hierarchy and Data Updates in DNA Storage}}, \textit{MICRO}.\\
+	Puru Sharma, Cheng-Kai Lim, Dehui Lin, \underline{Yash Pote}, and Djordje Jevdjic.
+	
+	\item[2022] \tab  {\href{https://arxiv.org/abs/2204.12261}{Managing Reliability Bias in DNA Storage}}, \textit{ISCA}.\\
+	Dehui Lin, Yasamin Tabatabaee, \underline{Yash Pote}, Djordje Jevdjic
+	
+\end{tablist}
+
+
+
+\section*{Teaching Experience}
+
+\subsection*{National University of Singapore}
+\begin{tablist}
+	
+	
+	
+	\item[CS 4244] \tab Knowledge Representation and Reasoning (2019, 20, 23) \\Teaching Assistant
+	\item[CS 5469] \tab Fundamentals of Logic in Computer Science (2019) \\ Teaching Assistant
+	\item[CS 4218] \tab  Software Testing (2021) \\
+	Lab Tutor
+\end{tablist}
+
+\section*{Professional Experience}
+\begin{tablist}
+	\item[2022] \tab Amazon AWS, Applied Science Intern in the Automated Reasoning Group\\
+	Cupertino, California, USA;
+\end{tablist}
+\begin{tablist}
+	\item[2017] \tab Goldman Sachs, Summer Intern in the Global Securities Team\\
+	Bangalore, India;
+\end{tablist}
+
+%   \section*{Technical Skills}
+%   \begin{tablist}
+	%       \item[Advanced] \tab Python, SAT/PB/ILP Solvers
+	%       \item[Intermediate] \tab C, C++, MySQL, Z3, GNUPlot, Latex
+	%   \end{tablist}
+
+
+\section*{Service}
+\underline{Conference Reviewer }
+\vspace{1em}
+\begin{tablist}
+	\item[\textit{AISTATS}] \tab 2024,25
+	\item[\textit{CAV}] \tab 2023        
+	\item[\textit{ICLR}] \tab 2023
+	\item[\textit{ICML}]\tab 2021, 22, 23, 24
+	\item[\textit{NeurIPS}] \tab 2021, 23, 24, 25 
+	\item[\textit{PODS}] \tab 2024
+\end{tablist}
+
+\section*{Selected Invited Talks}
+\begin{tablist}
+	\item[\underline{Towards Practical Distribution Testing}   \href{https://www.youtube.com/live/LexsPa-iGA4?si=b_wZrOyOpPlYB9VR}{(Video)}\href{https://simons.berkeley.edu/sites/default/files/2024-08/Yash\%20Pote_WOLA\%20Slides.pdf}{(Slides)}] 
+	
+	
+	\item[2024] A\&C Seminar, University of Waterloo.
+	
+	\item[2024]    Verification Seminar, Oxford University.
+	
+	\item[2024]    \href{https://simons.berkeley.edu/workshops/workshop-local-algorithms-wola}{Workshop on Local Algorithms(WOLA)}, Simons Institute, Berkeley  
+	
+	\item[2023]    SACT talk, University of Sydney. 
+	
+\end{tablist}
+
+\section*{ Extended Research Visit}
+\begin{tablist}
+	
+	
+	\item[2024]
+	WOLA at the \href{https://simons.berkeley.edu/programs/sublinear-algorithms/}{Sublinear Algorithms program}, \href{https://simons.berkeley.edu/}{Simon's Institute for the Theory of Computing}.
+	
+	\item[2024]    Hosted by  \href{https://ccanonne.github.io/}{Prof. Marta Z. Kwiatkowska} at the University of Oxford
+	
+	\item[2023]
+	Hosted by \href{https://ccanonne.github.io/}{Clément L. Canonne} at the School of Computer Science at The University of Sydney. 
+	
+	\item[2022]
+	Participant at the \href{https://simons.berkeley.edu/programs/sat2021}{SAT} program at the \href{https://simons.berkeley.edu/}{Simon's Institute for the Theory of Computing}.
+	
+\end{tablist}
+
+\section*{Misc.}
+\begin{tablist}
+	\item[2021] Cofounder of the Graduate Students Association of Computing (Coordinator from 2021-2023)
+\end{tablist}
+
+\begin{center}
+	%\vspace{6em}
+	\vfill
+	Updated \monthyeardate\today
+\end{center}
+
 \end{document}
